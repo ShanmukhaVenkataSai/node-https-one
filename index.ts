@@ -25,7 +25,7 @@ httpServer.listen(8080, () => {
 //     console.log('https server started on port 8443');
 // });
 
-app.post('/', (req: any, res: any) => {
+app.get('/', (req: any, res: any) => {
 
     console.log(req.socket.getPeerCertificate(true).raw.toString('base64'));
 
