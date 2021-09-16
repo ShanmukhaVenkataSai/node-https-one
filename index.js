@@ -11,7 +11,7 @@ var app = express();
 
 const port = process.env.PORT || 8080
 
-const httpServer = https.createServer(app);
+const httpServer = http.createServer(app);
 
 
 httpServer.listen(port,()=>{
@@ -30,8 +30,6 @@ httpServer.listen(port,()=>{
 // });
 
 app.get('/', (req, res) => {
-
-    console.log(req.socket.getPeerCertificate(true));
 
     res.send('working...')
 })
