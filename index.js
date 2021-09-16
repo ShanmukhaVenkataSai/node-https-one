@@ -4,7 +4,6 @@ const https = require('https');
 
 const util = require('util');
 
-
 var express = require('express');
 var app = express();
 
@@ -12,9 +11,13 @@ var app = express();
 
 const port = process.env.PORT || 8080
 
-app.listen(port,()=>{
-    console.log(`http server started on port ${port}`);
-})
+const httpServer = http.createServer(app);
+
+
+httpServer.listen(port,()=>{
+    console.log(`http server started on port ${httpServer.address().address}:${port}`);
+});
+
 
 // var httpServer = http.createServer(app);
 // // var httpsServer = https.createServer(credentials, app);
@@ -27,6 +30,8 @@ app.listen(port,()=>{
 // });
 
 app.get('/', (req, res) => {
+
+    lo(req.socket.getPeerCertificate(true))
 
     res.send('working...')
 })
