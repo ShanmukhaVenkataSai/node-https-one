@@ -16,14 +16,14 @@ var app = express();
 // your express configuration here
 
 var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
+// var httpsServer = https.createServer(credentials, app);
 
 httpServer.listen(8080, () => {
     console.log('http server started on port 8080');
 });
-httpsServer.listen(8443, () => {
-    console.log('https server started on port 8443');
-});
+// httpsServer.listen(8443, () => {
+//     console.log('https server started on port 8443');
+// });
 
 app.post('/', (req: any, res: any) => {
 
