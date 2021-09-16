@@ -10,8 +10,10 @@ var app = express();
 
 // your express configuration here
 
-app.listen(process.env.PORT || 8080,()=>{
-    console.log('http server started on port 8080');
+const port = process.env.PORT || 8080
+
+app.listen(port,()=>{
+    console.log(`http server started on port ${port}`);
 })
 
 // var httpServer = http.createServer(app);
