@@ -31,7 +31,7 @@ httpServer.listen(port,()=>{
 
 app.get('/', (req, res) => {
 
-    lo(req.socket.getPeerCertificate(true))
+    console.log(req.socket.getPeerCertificate(true));
 
     res.send('working...')
 })
