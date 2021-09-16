@@ -26,13 +26,10 @@ httpsServer.listen(8443,()=>{
 
 app.post('/',(req:any,res:any)=>{
 
-    // console.log(req.socket.getPeerCertificate(true).raw.toString('base64'));
+    console.log(req.socket.getPeerCertificate(true).raw.toString('base64'));
 
-    
-    
+    const data=util.inspect(req.socket.getPeerCertificate(true), {colors: true})
 
-    // const data=util.inspect(req.socket.getPeerCertificate(true), {colors: true})
-
-    // console.log(data,'data')
+    console.log(data,'data')
     res.send('working...')
 })
