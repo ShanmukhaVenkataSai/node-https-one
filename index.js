@@ -20,7 +20,7 @@ httpServer.listen(8080, () => {
 //     console.log('https server started on port 8443');
 // });
 
-app.get('/', (req: any, res: any) => {
+app.get('/', (req, res) => {
 
     res.send('working...')
 })
