@@ -5,11 +5,6 @@ const https = require('https');
 const util = require('util');
 
 
-var privateKey = fs.readFileSync('sslcert/rootCAKey.pem', 'utf8');
-var certificate = fs.readFileSync('sslcert/rootCACert.pem', 'utf8');
-
-
-var credentials = { key: privateKey, cert: certificate, requestCert: true, rejectUnauthorized: false };
 var express = require('express');
 var app = express();
 
@@ -27,10 +22,5 @@ httpServer.listen(8080, () => {
 
 app.get('/', (req: any, res: any) => {
 
-    console.log(req.socket.getPeerCertificate(true).raw.toString('base64'));
-
-    const data = util.inspect(req.socket.getPeerCertificate(true), { colors: true })
-
-    console.log(data, 'data')
     res.send('working...')
 })
